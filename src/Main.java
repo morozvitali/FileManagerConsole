@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        /*        показ дисків         */
+        ///*        показ дисків         */
         System.out.println("disks: ");
         File[] roots = File.listRoots();
         for (File root : roots) {
@@ -26,6 +26,9 @@ public class Main {
                     for (File file : files) {
                         String type = file.isDirectory() ? "[DIR] " : "      ";
                         System.out.println(type + file.getName());
+
+            /*      Додотково вивести інфо              */
+                        FileInfoPrinter.printInfo(file);
                     }
                 } else {
                     System.out.println("⚠️ Не вдалося прочитати вміст папки.");
